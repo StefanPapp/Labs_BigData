@@ -1,0 +1,1 @@
+val reducedRdd = carrierRdd.reduceByKey((a,b) => a+b)

@@ -1,0 +1,5 @@
+val text = sc.textFile(source_file)
+words = text.flatMap( line => line.split("\\W+") )
+val kv = words.map( word => (word.toLowerCase(), 1) )
+val totals = kv.reduceByKey( (v1, v2) => v1 + v2  )
+totals.saveAsTextFile(output)
